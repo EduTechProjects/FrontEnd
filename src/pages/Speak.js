@@ -1,25 +1,44 @@
 import React from "react";
 import { Component } from "react";
-import Mainbutton from './components/Mainbutton';
+import Button from './components/Button';
+import styled from 'styled-components';
+import Speak from './components/Speak/Speak';
+import QuestionContainer from './components/QuestionContainer';
+import {useNavigate} from 'react-router-dom';
 
-const FamilySpeak =() =>{
+
+
+
+const Speak =() =>{
+
+    const StartHandler = (event) =>{
+        
+
+    }
+
+    const EndHandler = (event) =>{
+
+    }
 
     return (
-        <div className = "SpeakContainer">
+        <SpeakContainer>
+            <QuestionContainer />
+            <ButtonContainer>
+                <Button text ={"Start"} onClick = {StartHandler}/>
+                <Button  text = {"End"} onClick = {EndHandler}/>
+            </ButtonContainer>
 
-            <Question>
-                <p>{Question.Family[0]}</p>
-            </Question>
-            <div className = "Speak__buttons">
-                <Mainbutton>START</Mainbutton>
-                <Mainbutton>END</Mainbutton>
-
-            </div>
-
-        </div>
+        </SpeakContainer>
+        
 
     );
 
 }
 
-export default FamilySpeak;
+
+
+
+
+
+
+export default Speak;

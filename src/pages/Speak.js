@@ -2,43 +2,46 @@ import React from "react";
 import { Component } from "react";
 import Button from './components/Button';
 import styled from 'styled-components';
-import Speak from './components/Speak/Speak';
+import Speaker from './components/Speak/Speaker';
 import QuestionContainer from './components/QuestionContainer';
-import {useNavigate} from 'react-router-dom';
+import {useState , useNavigate} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
+import Questions from './utils/Questions';
+
+const SpeakContainer = styled.div`
+
+
+`;
+
+const ButtonContainer = styled.div`
+
+`;
 
 
 
 
-const Speak =() =>{
+const  Speak =() =>{
 
-    const StartHandler = (event) =>{
-        
+    const {Questions} = useParams();
 
-    }
-
-    const EndHandler = (event) =>{
-
-    }
-
+    
     return (
+
         <SpeakContainer>
-            <QuestionContainer />
+            <QuestionContainer>
+                
+            </QuestionContainer>
+            <Speaker />
             <ButtonContainer>
-                <Button text ={"Start"} onClick = {StartHandler}/>
-                <Button  text = {"End"} onClick = {EndHandler}/>
+                <Button text={"Start"} />
+                <Button text={"Done"} />
             </ButtonContainer>
+            
 
         </SpeakContainer>
-        
 
     );
 
 }
-
-
-
-
-
-
 
 export default Speak;

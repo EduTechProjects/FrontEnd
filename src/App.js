@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Home from './pages/Home';
+import Speak from './pages/Speak';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-          <Home />
+          <Speak />
 
         </a>
         

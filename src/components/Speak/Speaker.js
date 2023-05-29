@@ -1,7 +1,7 @@
 import React from "react";
 import { Component } from "react";
 
-const Speak=() =>{
+const Speaker=() =>{
 
     return (
         <div>
@@ -13,4 +13,4 @@ const Speak=() =>{
 
 }
 
-export default Speak;
+export default Speaker;

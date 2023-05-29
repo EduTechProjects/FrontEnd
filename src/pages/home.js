@@ -17,7 +17,7 @@ const Home=() =>{
                 
                 </ImgContainer>
                 <HeadeContainer>
-                    <p>언제나 함께하는</p>
+                    <p style={"color : #FFFFFF"}>언제나 함께하는</p>
                     <h1>토킹메이트</h1>
                     <ButtonContainer>
                         <Mainbutton/>
@@ -29,8 +29,8 @@ const Home=() =>{
                 <Title>토킹메이트는 이런 서비스에요!</Title>
                 <p>오직 시험 응시 전, 말하기 상대가 필요하지 않으신가요?<br/>AI와 함께 주제별 말하기를 연습할 수 있어요.</p>
                 <SummaryButton>
-                    <OptionButton />
-                    <OptionButton />
+                    <OptionButton text={"여행"}/>
+                    <OptionButton text = {""}/>
                     <OptionButton />
                 </SummaryButton>
 
@@ -50,6 +50,8 @@ const Home=() =>{
 
             </RecommendContainer>
 
+
+
         </HomeContainer>
 
 
@@ -57,6 +59,9 @@ const Home=() =>{
 
     
 }
+
+export default Home;
+
 
 
 

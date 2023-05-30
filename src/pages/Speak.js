@@ -9,13 +9,21 @@ import {useParams} from 'react-router-dom';
 import Questions from './utils/Questions';
 
 const SpeakContainer = styled.div`
+   font-size : 32px;
+   text-align : center;
+   width : 33%;
 
 
 `;
 
 const ButtonContainer = styled.div`
+   width : 50%;
+   text-align : center;
+   
 
 `;
+
+
 
 
 
@@ -29,7 +37,7 @@ const  Speak =() =>{
 
         <SpeakContainer>
             <QuestionContainer>
-                
+               <p>Q1.</p> Tell me about your favorite food.
             </QuestionContainer>
             <Speaker />
             <ButtonContainer>

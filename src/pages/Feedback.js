@@ -5,8 +5,20 @@ import Navbar from './components/Common/Navbar';
 
 
 const FeedbackContainer = styled.div`
+   position: relative;
+   width: 1280px;
+   background-color: #F5F5F5;
 
 
+`;
+
+const Title = styled.div`
+   
+   position : absolute;
+   font-size : 32px;
+   text-align : center;
+   justify-self:  center;
+   
 `;
 
 const ToggleContainer = styled.div`

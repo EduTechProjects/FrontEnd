@@ -6,17 +6,37 @@ import Navbar from './components/Common/Navbar';
 import {useNavigate} from 'react-router-dom';
 import ColorCode from './utils/ColorCode';
 
+
+const Documentcontainer = styled.div`
+   position: absolute;
+   width: 480px;
+   height: 307px;
+   background: #FFFFFF;
+   border-radius: 28px;
+`;
+
 const SubjectContainer = styled.div`
+   position : relative;
+   width : 1280px;
+   height : 964px;
+   background-color: #F5F5F5;
+   
+`;
 
-
+const Title = styled.div`
+   position : absolute;
+   font-size : 32px;
+   text-align : center;
+   font-weight : 700;
+   color : black;
 
 
 `;
 
-const Title = styled.div`
-
-
-
+const CautionBox = styled.div`
+   font-size : 10px;
+   
+   
 `;
 
 
@@ -33,8 +53,10 @@ const Button = styled.button`
   background-color: ${props => (props.active ? "SelectBlue" : "UnSelectBlue")};
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 17px;
   cursor: pointer;
+  width : 151px;
+  height : 53px;
 `;
 
 const Subject=() =>{
@@ -51,24 +73,34 @@ const Subject=() =>{
 return (
     <SubjectContainer>
     <Navbar />
-    <Title>토킹메이트 시작하기</Title>
+    <Title><p>토킹</p>메이트 시작하기</Title>
     <Documentcontainer>
         <p>사용 설명서</p>
         <Documentation>
             1. 아래 3개의 주제 중 하나를 골라주세요.<br/>
             2. 선택한 주제와 관련된 질문 3개가 제공됩니다.<br/>
-            3. 각 질문에 영어로 답변해주세요. (제한 시간 2분)
-            4. 
-
+            3. 각 질문에 영어로 답변해주세요. (제한 시간 2분)<br/>
+            4. START 버튼을 누른 뒤 답변을 시작하고, 답변이 끝나면 END 버튼을 눌러주세요.<br/>
+            5. 모든 질문에 대한 답변이 끝나면 피드백이 제공됩니다.<br />
         </Documentation>
+        <CautionBox>
+            
+            <p><img />질문당 권장 답변 시간인 2분에 맞추어 설정했습니다.</p>
+
+        </CautionBox>
         
     </Documentcontainer>
 
-    <SubjectButton>
-        <Button text={"여행"}  active = {activeButton ===0} onClick ={() => handleClick(0)}/>
-        <Button text = {"음식"} active = {activeButton ===1} onCLick = {() => handleClick(1)}/>
-        <Button text ={"가족"} active = {activeButton ===2} onClick = {() => handleClick(2)}/>
-    </SubjectButton>
+    <SubjectBox>
+        <ChooseTitle>주제를 선택해주세요.</ChooseTitle>
+        <SubjectButton>
+            <Button text={"여행"}  active = {activeButton ===0} onClick ={() => handleClick(0)}/>
+            <Button text = {"음식"} active = {activeButton ===1} onCLick = {() => handleClick(1)}/>
+            <Button text ={"가족"} active = {activeButton ===2} onClick = {() => handleClick(2)}/>
+        </SubjectButton>
+
+    </SubjectBox>
+    <Button text={"시작하기"} />
 
 
 </SubjectContainer>

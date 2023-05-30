@@ -48,17 +48,32 @@ const Subject=() =>{
         navigate('speak/${buttonIndex + 1}');
     }
 
+return (
     <SubjectContainer>
-        <Navbar />
-        <Title>토킹메이트 시작하기</Title>
-        <SubjectButton>
-            <Button text={"여행"}  active = {activeButton ===0} onClick ={() => handleClick(0)}/>
-            <Button text = {"음식"} active = {activeButton ===1} onCLick = {() => handleClick(1)}/>
-            <Button text ={"가족"} active = {activeButton ===2} onClick = {() => handleClick(2)}/>
-        </SubjectButton>
+    <Navbar />
+    <Title>토킹메이트 시작하기</Title>
+    <Documentcontainer>
+        <p>사용 설명서</p>
+        <Documentation>
+            1. 아래 3개의 주제 중 하나를 골라주세요.<br/>
+            2. 선택한 주제와 관련된 질문 3개가 제공됩니다.<br/>
+            3. 각 질문에 영어로 답변해주세요. (제한 시간 2분)
+            4. 
 
-   
-    </SubjectContainer>
+        </Documentation>
+        
+    </Documentcontainer>
+
+    <SubjectButton>
+        <Button text={"여행"}  active = {activeButton ===0} onClick ={() => handleClick(0)}/>
+        <Button text = {"음식"} active = {activeButton ===1} onCLick = {() => handleClick(1)}/>
+        <Button text ={"가족"} active = {activeButton ===2} onClick = {() => handleClick(2)}/>
+    </SubjectButton>
+
+
+</SubjectContainer>
+
+);
 
 
 }

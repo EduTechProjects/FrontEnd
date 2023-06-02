@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Button from './components/Common/Button';
 import Navbar from './components/Common/Navbar';
 import {useNavigate} from 'react-router-dom';
-import ColorCode from './utils/ColorCode';
+import {ColorCode} from '../utils/Palette';
 
 
 const Documentcontainer = styled.div`
@@ -13,6 +13,7 @@ const Documentcontainer = styled.div`
    height: 307px;
    background: #FFFFFF;
    border-radius: 28px;
+   justify-items: center;
 `;
 
 const SubjectContainer = styled.div`
@@ -20,6 +21,7 @@ const SubjectContainer = styled.div`
    width : 1280px;
    height : 964px;
    background-color: #F5F5F5;
+   justify-items: center;
    
 `;
 
@@ -30,19 +32,37 @@ const Title = styled.div`
    font-weight : 700;
    color : black;
 
-
 `;
 
 const CautionBox = styled.div`
+   position : absolute;
    font-size : 10px;
+   width : 337px;
+   height: 22px;
    
    
+`;
+
+const SubjectBox = styled.div`
+   position : absolute;
+   width : 565px;
+   height : 180px;
+
 `;
 
 
 const SubjectButton = styled.div`
+   display: flex;
+   width : 565px;
+   height : 180px;
 
+`;
 
+const ChooseTitle = styled.div`
+   position: absolute;
+   font-weight : 600px;
+   font-size : 20px;
+   text-align: center;
 
 `;
 
@@ -50,14 +70,23 @@ const SubjectButton = styled.div`
 const Button = styled.button`
   margin: 5px;
   padding: 10px 20px;
-  background-color: ${props => (props.active ? "SelectBlue" : "UnSelectBlue")};
+  background-color: ${props => (props.active ? ColorCode.SelectBlue : ColorCode.UnSelectBlue)};
   color: white;
   border: none;
   border-radius: 17px;
   cursor: pointer;
   width : 151px;
   height : 53px;
+  text-align: center;
 `;
+
+const Documentation = styled.div`
+    position : absolute;
+    text-align: left;
+    font-size: medium;
+`;
+
+
 
 const Subject=() =>{
 
@@ -70,12 +99,14 @@ const Subject=() =>{
         navigate('speak/${buttonIndex + 1}');
     }
 
+
+
 return (
     <SubjectContainer>
     <Navbar />
-    <Title><p>토킹</p>메이트 시작하기</Title>
+    <Title><p style={{color : "ColorCode.SelectBlue"}}>토킹</p>메이트 시작하기</Title>
     <Documentcontainer>
-        <p>사용 설명서</p>
+        <p style={{fontWeight : "bold", size:"20px"}}>사용 설명서</p>
         <Documentation>
             1. 아래 3개의 주제 중 하나를 골라주세요.<br/>
             2. 선택한 주제와 관련된 질문 3개가 제공됩니다.<br/>
@@ -85,7 +116,7 @@ return (
         </Documentation>
         <CautionBox>
             
-            <p><img />질문당 권장 답변 시간인 2분에 맞추어 설정했습니다.</p>
+            <p><img src="../assets/catuion.png/" style={{width :"20px", height:"26px"}}/>질문당 권장 답변 시간인 2분에 맞추어 설정했습니다.</p>
 
         </CautionBox>
         
@@ -100,7 +131,7 @@ return (
         </SubjectButton>
 
     </SubjectBox>
-    <Button text={"시작하기"} />
+    <Button text={"시작하기"} style={{color : "white", background : ColorCode.MainBlue, borderRadius : "61px" ,width:"237px", height:"73px"}} />
 
 
 </SubjectContainer>

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Button from './components/Common/Button';
 import Navbar from './components/Common/Navbar';
 import {useNavigate} from 'react-router-dom';
-import {ColorCode} from '../utils/Palette';
+import ColorCode from '../utils/Palette';
 
 
 const Documentcontainer = styled.div`

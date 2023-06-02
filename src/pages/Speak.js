@@ -31,6 +31,10 @@ const ButtonContainer = styled.div`
 `;
 
 const Button = styled.button`
+    position : absolute;
+    color : white;
+    
+
      
 `;
 
@@ -47,7 +51,7 @@ const  Speak =() =>{
             </QuestionContainer>
             <Speaker />
             <ButtonContainer>
-                <Button text={"Start"} />
+                <Button text={"Start"} style = {{color : "white", background:ColorCode.SelectBlue}}/>
                 <Button text={"Done"} />
             </ButtonContainer>  
         </SpeakContainer>

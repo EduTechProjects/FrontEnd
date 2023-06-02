@@ -2,7 +2,6 @@ import React from "react";
 import { Component } from "react";
 import ToggleBox from "./components/ToggleBox";
 import Navbar from './components/Common/Navbar';    
-import { ColorCode } from "../utils/palette";
 
 const FeedbackContainer = styled.div`
    position: relative;
@@ -21,7 +20,7 @@ const Title = styled.div`
    text-align : center;
    justify-self:  center;
    font-weight: bold;
-   
+
 
    
 `;

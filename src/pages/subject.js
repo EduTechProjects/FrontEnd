@@ -115,13 +115,9 @@ return (
             5. 모든 질문에 대한 답변이 끝나면 피드백이 제공됩니다.<br />
         </Documentation>
         <CautionBox>
-            
             <p><img src="../assets/catuion.png/" style={{width :"20px", height:"26px"}}/>질문당 권장 답변 시간인 2분에 맞추어 설정했습니다.</p>
-
-        </CautionBox>
-        
+        </CautionBox>        
     </Documentcontainer>
-
     <SubjectBox>
         <ChooseTitle>주제를 선택해주세요.</ChooseTitle>
         <SubjectButton>

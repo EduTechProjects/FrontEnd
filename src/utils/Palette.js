@@ -3,6 +3,6 @@ const ColorCode = {
     SelectBlue : "#42A1E0",
     UnSelectBlue : "#ABDDFF",
 
-}
+};
 
 export {ColorCode};

@@ -1,7 +1,7 @@
 import React from "react";
 import { Component } from "react";
-import ToggleBox from "./components/ToggleBox";
-import Navbar from './components/Common/Navbar';    
+import Togglebox from ".././components/Feedback/Togglebox";  
+import styled from "styled-components";
 
 const FeedbackContainer = styled.div`
    position: relative;
@@ -34,11 +34,7 @@ const ToggleContainer = styled.div`
 
 `;
 
-const ToggleBox = styled.div`
-    margin-top : 15px;
-    display: block;
 
-`;
 
 const Feedback=() =>{
 
@@ -49,12 +45,12 @@ const Feedback=() =>{
     return (
         
         <FeedbackContainer>
-            <Navbar />
+            
             <Title>스피킹 결과</Title>
             <ToggleContainer>
-                <ToggleBox />
-                <ToggleBox />
-                <ToggleBox />
+                <Togglebox  />
+                <Togglebox />
+                <Togglebox />
             </ToggleContainer>
             
 

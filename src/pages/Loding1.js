@@ -1,10 +1,12 @@
 import React from 'react';
-import LoadingContainer from './components/LoadingContainer';
+
 
 const Loading1 =() =>{
     return (
 
-        <LoadingContainer/>
+        <div>
+            Loading화면
+        </div>
 
     );
 

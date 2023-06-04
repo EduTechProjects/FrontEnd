@@ -8,34 +8,38 @@ import ColorCode from '../utils/Palette';
 
 
 const Documentcontainer = styled.div`
-   position: absolute;
+   
    width: 480px;
    height: 307px;
    background: #FFFFFF;
    border-radius: 28px;
    justify-items: center;
+   text-align:  center;
 `;
 
 const SubjectContainer = styled.div`
-   position : relative;
+   
    width : 1280px;
    height : 964px;
    background-color: #F5F5F5;
    justify-items: center;
+   justify-content: center;
+   display: inline-block;
    
 `;
 
 const Title = styled.div`
-   position : absolute;
+   
    font-size : 32px;
    text-align : center;
    font-weight : 700;
    color : black;
+   margin-bottom: 0 auto;
 
 `;
 
 const CautionBox = styled.div`
-   position : absolute;
+   
    font-size : 10px;
    width : 337px;
    height: 22px;
@@ -44,7 +48,7 @@ const CautionBox = styled.div`
 `;
 
 const SubjectBox = styled.div`
-   position : absolute;
+   
    width : 565px;
    height : 180px;
 
@@ -59,7 +63,7 @@ const SubjectButton = styled.div`
 `;
 
 const ChooseTitle = styled.div`
-   position: absolute;
+   
    font-weight : 600px;
    font-size : 20px;
    text-align: center;
@@ -81,7 +85,8 @@ const SubButton = styled.button`
 `;
 
 const Documentation = styled.div`
-    position : absolute;
+    margin-left : 20px;
+    
     text-align: left;
     font-size: medium;
 `;

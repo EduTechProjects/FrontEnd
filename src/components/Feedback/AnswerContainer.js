@@ -2,7 +2,7 @@ import React from "react";
 import { Component } from "react";
 import styled from "styled-components";
 
-const Contaienr = styled.div`
+const Container = styled.div`
     width : 90%;
 
 `;

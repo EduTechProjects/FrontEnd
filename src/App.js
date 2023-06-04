@@ -5,10 +5,12 @@ import Home from "./pages/Home";
 import Subject from "./pages/Subject.js";
 import Speak from "./pages/Speak";
 import Feedback from "./pages/Feedback";
+import Navbar from "./components/Common/Navbar";
 
 function App() {
   return (
     <BrowserRouter>
+      <Navbar />
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -16,7 +18,7 @@ function App() {
           <Route path="/speak" element={<Speak />} />
           <Route path="/feedback" element={<Feedback />} />
         </Routes>
-        <Subject />
+        {/* <Subject /> */}
       </div>
     </BrowserRouter>
   );

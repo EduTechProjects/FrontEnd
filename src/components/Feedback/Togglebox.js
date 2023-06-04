@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Component } from 'react';
-import Toggle from './Toggle';
 import {useState} from 'react';
 import AnswerContainer from './AnswerContainer';
 import FeedbackContainer from './FeedbackContainer';
-import { ColorCode } from '../../utils/palette';
+import { ColorCode } from './../../utils/Palette';
 
 
 const Container = styled.div`
@@ -43,13 +42,13 @@ const ToggleBox = () =>{
             backgroundSize:'cover',
             transform : 'rotate(${rotate}deg)',
             }} onClick={ToggleHandler}></button>
-            {Toggle && (
+            {/* {Toggle && (
                 <React.Fragment>
                     <AnswerContainer/>
                     <FeedbackContainer/>
 
                 </React.Fragment>
-            )}
+            )} */}
         </Container>
 
     );

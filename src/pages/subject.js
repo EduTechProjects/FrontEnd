@@ -15,6 +15,7 @@ const Documentcontainer = styled.div`
    border-radius: 28px;
    justify-items: center;
    text-align:  center;
+   padding :0 auto;
 `;
 
 const SubjectContainer = styled.div`
@@ -35,6 +36,8 @@ const Title = styled.div`
    font-weight : 700;
    color : black;
    margin-bottom: 0 auto;
+   padding-top: 20vh;
+   padding-bottom : 10vh;
 
 `;
 
@@ -48,7 +51,6 @@ const CautionBox = styled.div`
 `;
 
 const SubjectBox = styled.div`
-   
    width : 565px;
    height : 180px;
 
@@ -59,11 +61,13 @@ const SubjectButton = styled.div`
    display: flex;
    width : 565px;
    height : 180px;
+   padding-left: 50%;
 
 `;
 
 const ChooseTitle = styled.div`
-   
+   margin-top : 10vh;
+   margin-bottom : 10vh;
    font-weight : 600px;
    font-size : 20px;
    text-align: center;
@@ -109,7 +113,7 @@ const Subject=() =>{
 return (
     <SubjectContainer>
     
-    <Title><p style={{color : "ColorCode.SelectBlue"}}>토킹</p>메이트 시작하기</Title>
+    <Title><b style={{color : "ColorCode.SelectBlue"}}>토킹</b>메이트 시작하기</Title>
     <Documentcontainer>
         <p style={{fontWeight : "bold", size:"20px"}}>사용 설명서</p>
         <Documentation>
@@ -120,7 +124,7 @@ return (
             5. 모든 질문에 대한 답변이 끝나면 피드백이 제공됩니다.<br />
         </Documentation>
         <CautionBox>
-            <p><img src="../assets/catuion.png/" style={{width :"20px", height:"26px"}}/>질문당 권장 답변 시간인 2분에 맞추어 설정했습니다.</p>
+            <p><img src="edutechprojects/src/assets/caution.png" style={{width :"20px", height:"26px"}}/>질문당 권장 답변 시간인 2분에 맞추어 설정했습니다.</p>
         </CautionBox>        
     </Documentcontainer>
     <SubjectBox>

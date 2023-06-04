@@ -20,7 +20,7 @@ function App() {
             
           </Routes>
           
-          <Subject/>
+          <Speak/>
         </div>
     
     </BrowserRouter>

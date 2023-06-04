@@ -3,48 +3,58 @@ import { Component } from "react";
 import Button from '.././components/Common/Button';
 import styled from 'styled-components';
 import Speaker from '../components/Speak/Speaker';
-import {useState , useNavigate} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import {useParams} from 'react-router-dom';
 import Questions from '../utils/Questions';
 import  ColorCode  from ".././utils/Palette";
+import {useState} from 'react';
 
 
 const SpeakContainer = styled.div`
    background-color: #F5F5F5;
-   position : relative;
-   width : 1280px;
    height: 832px;
+   text-align: center;
+   
 `;
 
 const QuestionContainer = styled.div`
+    background-color: #F5F5F5; 
      font-weight: bold;
      font-size: 32px;
-     position: absolute;
      width : 50%;
      height : 50px;
+     text-align: center;
+     padding-top: 20vh;
+     padding-left: 50%;
 `;
 const ButtonContainer = styled.div`
-      position: absolute;
-      width : 50%;
       height : 80px;
       display: flex;
+      padding-top : 20vh;
+      padding-left : 50%;
 `;
 
 
 
 
 const  Speak =() =>{
+   
+   const [showSpeaker, setShowSpeaker] = useState(false);
+   const handleClick = ()=>{
+    setShowSpeaker(true);
+   }
     
     return (
 
         <SpeakContainer>
             
             <QuestionContainer>
-               <p style={{color : ColorCode.SelectBlue }}>Q1.</p> Tell me about your favorite food.
+               <b style={{color : ColorCode.SelectBlue }}>Q1.</b> Tell me about your favorite food.
             </QuestionContainer>
+            {showSpeaker && <Speaker/>}
             <Speaker />
             <ButtonContainer>
-                <Button  text={"Start"} style = {{color : "white", background:ColorCode.SelectBlue}}/>
+                <Button  text={"Start"} style = {{color : "white", background:ColorCode.SelectBlue}} onClick={handleClick}/>
                 <Button text={"Done"} style={{color : "white", background : ColorCode.SelectBlue}} />
             </ButtonContainer>  
         </SpeakContainer>

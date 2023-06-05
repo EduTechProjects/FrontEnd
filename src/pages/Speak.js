@@ -3,49 +3,96 @@ import { Component } from "react";
 import Button from '.././components/Common/Button';
 import styled from 'styled-components';
 import Speaker from '../components/Speak/Speaker';
-import {useState , useNavigate} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import {useParams} from 'react-router-dom';
 import Questions from '../utils/Questions';
 import  ColorCode  from ".././utils/Palette";
+import {useState} from 'react';
+import Navbar from "../components/Common/Navbar";
+
 
 
 const SpeakContainer = styled.div`
    background-color: #F5F5F5;
-   position : relative;
-   width : 1280px;
-   height: 832px;
+   text-align: center;
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   
+   position:relative;
+
+   
 `;
 
 const QuestionContainer = styled.div`
+    background-color: #F5F5F5; 
      font-weight: bold;
-     font-size: 32px;
-     position: absolute;
+     font-size: 30px;
      width : 50%;
-     height : 50px;
+     height : 40px;
+     text-align: center;
+     padding-top: 20vh;
+     margin : 0 auto;
+     padding-bottom: 20vh;
+     
 `;
 const ButtonContainer = styled.div`
-      position: absolute;
-      width : 50%;
-      height : 80px;
+      padding-top: 5vh;
+      margin:0 auto;
+      gap:30px;
+      justify-items: flex-start;
       display: flex;
 `;
 
+const SpeakerWrapper = styled.div`
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
 
 
 
 const  Speak =() =>{
+   
+   const [showSpeaker, setShowSpeaker] = useState(false);
+   const [buttonColor , setButtonColor] = useState(ColorCode.SelectBlue);
+
+   const handleClick = ()=>{
+    setShowSpeaker(true);
+   }
+
+   const handleButtonClick=() =>{
+       setButtonColor(ColorCode.MainBlue)
+   }
+
+   const handleDoneClick=()=>{
+    setShowSpeaker(false);
+   }
     
     return (
 
         <SpeakContainer>
             
             <QuestionContainer>
-               <p style={{color : ColorCode.SelectBlue }}>Q1.</p> Tell me about your favorite food.
+               <b style={{color : ColorCode.SelectBlue }}>Q1.</b> Tell me about your favorite food.
             </QuestionContainer>
-            <Speaker />
+            {showSpeaker && (
+                <SpeakerWrapper>
+                    <Speaker />
+                </SpeakerWrapper>
+            )}
+            
             <ButtonContainer>
-                <Button  text={"Start"} style = {{color : "white", background:ColorCode.SelectBlue}}/>
-                <Button text={"Done"} style={{color : "white", background : ColorCode.SelectBlue}} />
+                <Button  text={"Start"} style = {{color : "white", background:buttonColor, }} onClick={()=>{
+                    handleClick();
+                    handleButtonClick();
+                }}/>
+                <Button text={"Done"} style={{color : "white", background : buttonColor}} onClick={()=>{
+                    handleDoneClick();handleButtonClick();
+                }}/>
             </ButtonContainer>  
         </SpeakContainer>
 

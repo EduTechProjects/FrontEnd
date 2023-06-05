@@ -34,7 +34,7 @@ const ToggleBox = () =>{
             <div style={{color : ColorCode.SelectBlue, fontSize:"24px", fontWeight:"bold"}}>조회하기</div>
             <button 
             style=
-            {{backgroundImage: "url('./assets/toggle.png')", 
+            {{backgroundImage: "url('../assets/toggle.png')", 
             width : "29px", 
             height : "25px", 
             backgroundRepeat : "no-repeat",

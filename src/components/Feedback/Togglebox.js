@@ -5,25 +5,33 @@ import {useState} from 'react';
 import AnswerContainer from './AnswerContainer';
 import FeedbackContainer from './FeedbackContainer';
 import { ColorCode } from './../../utils/Palette';
+import {ReactComponent as ToggleIcon} from './../../assets/toggle.svg';
 
 
 const Container = styled.div`
-   background-color: white;
-   display : flex;
+   background-color: white;  
    border-radius: 14px;
+   width : 800px;
+   justify-content: center;
+   padding-bottom: 10vh;
 
 `;
 
 
+const ToggleIconstyled = styled(ToggleIcon)`
+    width : 14px;
+    height : 16px;
+
+`;
 
 const ToggleBox = () =>{
 
-    const [toggle, setToggle] = useState('false');
+    const [isToggleon, setIsToggleOn] = useState('false');
     const [rotate, setRotate] = useState(0);
      
 
     const ToggleHandler=(event)=>{
-        setToggle((preveToggle) =>!preveToggle);
+        setIsToggleOn((preveToggle) =>!preveToggle);
 
     }
 
@@ -32,23 +40,13 @@ const ToggleBox = () =>{
         <Container>
             <div>A1.</div>
             <div style={{color : ColorCode.SelectBlue, fontSize:"24px", fontWeight:"bold"}}>조회하기</div>
-            <button 
-            style=
-            {{backgroundImage: "url('../assets/toggle.png')", 
-            width : "29px", 
-            height : "25px", 
-            backgroundRepeat : "no-repeat",
-            backgroundPosition : 'center',
-            backgroundSize:'cover',
-            transform : 'rotate(${rotate}deg)',
-            }} onClick={ToggleHandler}></button>
-            {/* {Toggle && (
+            <ToggleIconstyled onClick={ToggleHandler}/>
+             {isToggleon && (
                 <React.Fragment>
                     <AnswerContainer/>
                     <FeedbackContainer/>
-
                 </React.Fragment>
-            )} */}
+            )} 
         </Container>
 
     );

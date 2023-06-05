@@ -11,9 +11,16 @@ import {ReactComponent as ToggleIcon} from './../../assets/toggle.svg';
 const Container = styled.div`
    background-color: white;  
    border-radius: 14px;
-   width : 800px;
-   justify-content: center;
-   padding-bottom: 10vh;
+   width : 700px;
+   flex-direction: column;
+   justify-content: space-between;
+   display: flex;
+   padding-bottom: 3vh;
+   margin-bottom : 2vh;
+   justify-content: space-between;
+   padding-left :2vw;
+   padding-right: 2vw;
+   padding-top: 2vh;
 
 `;
 
@@ -38,13 +45,16 @@ const ToggleBox = () =>{
 
     return (
         <Container>
-            <div>A1.</div>
-            <div style={{color : ColorCode.SelectBlue, fontSize:"24px", fontWeight:"bold"}}>조회하기</div>
-            <ToggleIconstyled onClick={ToggleHandler}/>
+            <div style={{color : ColorCode.SelectBlue, fontSize:"20px", fontWeight:"bold", alignSelf: "flex-start"}}>A1.</div>
+            <div style={{color : ColorCode.SelectBlue, fontSize:"20px", fontWeight:"bold", textAlign: "right"}}><ToggleIconstyled onClick={ToggleHandler}/>조회하기</div>
+            
+            
              {isToggleon && (
                 <React.Fragment>
+                  <div style={{ display: 'flex', flexDirection: 'column' }}>  
                     <AnswerContainer/>
                     <FeedbackContainer/>
+                  </div>
                 </React.Fragment>
             )} 
         </Container>

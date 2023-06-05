@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/home";
-import Subject from "./pages/Subject.js";
+import Subject from "./pages/Subject";
 import Speak from "./pages/Speak";
 import Feedback from "./pages/Feedback";
 import Navbar from "./components/Common/Navbar";

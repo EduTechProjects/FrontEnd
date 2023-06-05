@@ -28,7 +28,7 @@ const Title = styled.div`
 `;
 
 const ToggleContainer = styled.div`
-  
+   display : flex;
     margin-top : 20px;
     justify-items: center;
     align-items: center;
@@ -36,9 +36,12 @@ const ToggleContainer = styled.div`
     align-items: center;
     display: flex;
     flex-direction: column;
+    gap : 40px;
+    margin-top : 20px;
     justify-content: center;
-    align-items: center;
     
+    align-content : space-between;
+    margin-bottom : 20vh;
 
 
 `;

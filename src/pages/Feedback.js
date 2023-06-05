@@ -1,16 +1,16 @@
 import React from "react";
 import { Component } from "react";
-import Togglebox from ".././components/Feedback/Togglebox";  
+import ToggleBox from ".././components/Feedback/Togglebox";  
 import styled from "styled-components";
 
 const FeedbackContainer = styled.div`
    
-   width: 1280px;
+   padding-top :10vh;
    background-color: #F5F5F5;
-   justify-items: center;
+   display: flex;
+   flex-direction: column;
    align-items: center;
-   flex-direction: row;
-
+   
 
 `;
 
@@ -18,9 +18,10 @@ const Title = styled.div`
    
    font-size : 32px;
    text-align : center;
-   justify-self:  center;
    font-weight: bold;
    color: black;
+   padding-top: 10vh;
+   padding-bottom : 15vh;
 
 
    
@@ -31,6 +32,13 @@ const ToggleContainer = styled.div`
     margin-top : 20px;
     justify-items: center;
     align-items: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 
 
 `;
@@ -49,9 +57,9 @@ const Feedback=() =>{
             
             <Title>스피킹 결과</Title>
             <ToggleContainer>
-                <Togglebox  />
-                <Togglebox />
-                <Togglebox />
+                <ToggleBox  />
+                <ToggleBox />
+                <ToggleBox />
             </ToggleContainer>
             
 

@@ -8,40 +8,68 @@ import {useParams} from 'react-router-dom';
 import Questions from '../utils/Questions';
 import  ColorCode  from ".././utils/Palette";
 import {useState} from 'react';
+import Navbar from "../components/Common/Navbar";
+
 
 
 const SpeakContainer = styled.div`
    background-color: #F5F5F5;
-   height: 832px;
    text-align: center;
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   
+   position:relative;
+
    
 `;
 
 const QuestionContainer = styled.div`
     background-color: #F5F5F5; 
      font-weight: bold;
-     font-size: 32px;
+     font-size: 30px;
      width : 50%;
-     height : 50px;
+     height : 40px;
      text-align: center;
      padding-top: 20vh;
-     padding-left: 50%;
+     margin : 0 auto;
+     padding-bottom: 20vh;
+     
 `;
 const ButtonContainer = styled.div`
-      height : 80px;
+      padding-top: 5vh;
+      margin:0 auto;
+      gap:30px;
+      justify-items: flex-start;
       display: flex;
-      padding-top : 20vh;
-      padding-left : 50%;
 `;
 
+const SpeakerWrapper = styled.div`
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
 
 
 
 const  Speak =() =>{
    
    const [showSpeaker, setShowSpeaker] = useState(false);
+   const [buttonColor , setButtonColor] = useState(ColorCode.SelectBlue);
+
    const handleClick = ()=>{
     setShowSpeaker(true);
+   }
+
+   const handleButtonClick=() =>{
+       setButtonColor(ColorCode.MainBlue)
+   }
+
+   const handleDoneClick=()=>{
+    setShowSpeaker(false);
    }
     
     return (
@@ -51,11 +79,20 @@ const  Speak =() =>{
             <QuestionContainer>
                <b style={{color : ColorCode.SelectBlue }}>Q1.</b> Tell me about your favorite food.
             </QuestionContainer>
-            {showSpeaker && <Speaker/>}
-            <Speaker />
+            {showSpeaker && (
+                <SpeakerWrapper>
+                    <Speaker />
+                </SpeakerWrapper>
+            )}
+            
             <ButtonContainer>
-                <Button  text={"Start"} style = {{color : "white", background:ColorCode.SelectBlue}} onClick={handleClick}/>
-                <Button text={"Done"} style={{color : "white", background : ColorCode.SelectBlue}} />
+                <Button  text={"Start"} style = {{color : "white", background:buttonColor, }} onClick={()=>{
+                    handleClick();
+                    handleButtonClick();
+                }}/>
+                <Button text={"Done"} style={{color : "white", background : buttonColor}} onClick={()=>{
+                    handleDoneClick();handleButtonClick();
+                }}/>
             </ButtonContainer>  
         </SpeakContainer>
 

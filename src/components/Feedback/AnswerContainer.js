@@ -3,10 +3,11 @@ import { ColorCode } from "./../../utils/Palette";
 import styled from "styled-components";
 
 const Container = styled.div`
-    width : 70%;
+    width : 90%;
     background-color: white;
     font-size :20px;
     text-align: justify;
+    line-height: 150%;
 
 `;
 

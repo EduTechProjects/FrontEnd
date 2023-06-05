@@ -30,9 +30,9 @@ const Document= styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 28px;
-    height: 50vh;
+    height: 45vh;
     margin-bottom: 5vh;
-    padding-bottom: 5vh;
+    padding-bottom: 3vh;
 
 
 `;
@@ -61,7 +61,9 @@ const DocumentBox = styled.div`
      text-align: justify;
      text-align-last:left;
      margin : 0 auto;
-     line-height: 150%;
+     line-height: 170%;
+     
+
      
 
 `;

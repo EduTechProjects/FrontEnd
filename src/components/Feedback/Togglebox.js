@@ -33,7 +33,7 @@ const ToggleIconstyled = styled(ToggleIcon)`
 
 const ToggleBox = () =>{
 
-    const [isToggleon, setIsToggleOn] = useState('false');
+    const [isToggleon, setIsToggleOn] = useState('true');
     const [rotate, setRotate] = useState(0);
      
 

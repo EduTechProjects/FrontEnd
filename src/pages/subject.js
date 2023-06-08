@@ -91,6 +91,29 @@ const CautionIcon = styled(Caution)`
 
 const Subject=() =>{
 
+     const navigate = useNavigate();
+     const [selectTopic, setSelectTopic ] = useState(null);
+
+     const handleSubButtonClick = (index) => {
+          setSelectTopic(index);
+     };
+
+     const handleStartButtonClick=()=>{
+          if(selectTopic !==null){
+               let topic;
+               if (selectTopic ===1) {
+                    topic = "food";
+               } else if (selectTopic===2){
+                    topic = "travel";
+               } else if(selectTopic ===3){
+                    topic = "family";
+               }
+               navigate('/speak/${topic}')
+          } else {
+               console.error('토픽을 설정해주세요.')
+          }
+     };
+
 
   
   return(
@@ -112,11 +135,11 @@ const Subject=() =>{
            </Document>
            <SubjectTitle>주제를 선택해주세요.</SubjectTitle>
            <SubjectButtons>
-             <Button type="2" text="음식" />
-             <Button type="2" text="여행" />
-             <Button type="2" text="가족" />
+             <Button type="2" text="음식" onClick={()=>handleSubButtonClick(1)}/>
+             <Button type="2" text="여행" onClick={()=>handleSubButtonClick(2)}/>
+             <Button type="2" text="가족" onClick={()=>handleSubButtonClick(3)}/>
            </SubjectButtons>
-           <StartButton>시작하기</StartButton>
+           <StartButton onClick={handleStartButtonClick}>시작하기</StartButton>
        </Subjectcontainer>
     
     </>

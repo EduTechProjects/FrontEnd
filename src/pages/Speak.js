@@ -56,9 +56,14 @@ const SpeakerWrapper = styled.div`
 
 
 const  Speak =() =>{
+
+   const navigate = useNavigate();
+   const {topic} =useParams();
+   const questionArr= Questions[topic];
    
    const [showSpeaker, setShowSpeaker] = useState(false);
    const [buttonColor , setButtonColor] = useState(ColorCode.SelectBlue);
+   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
    const handleClick = ()=>{
     setShowSpeaker(true);
@@ -70,6 +75,7 @@ const  Speak =() =>{
 
    const handleDoneClick=()=>{
     setShowSpeaker(false);
+    setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
    }
     
     return (
@@ -77,7 +83,7 @@ const  Speak =() =>{
         <SpeakContainer>
             
             <QuestionContainer>
-               <b style={{color : ColorCode.SelectBlue }}>Q1.</b> Tell me about your favorite food.
+               <b style={{color : ColorCode.SelectBlue }}>Q{currentQuestionIndex + 1}.</b> {questionArr[currentQuestionIndex]}
             </QuestionContainer>
             {showSpeaker && (
                 <SpeakerWrapper>

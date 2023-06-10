@@ -2,6 +2,7 @@ import React from "react";
 import { ColorCode } from "./../../utils/Palette";
 import styled from "styled-components";
 
+
 const Container = styled.div`
     width : 90%;
     background-color: white;

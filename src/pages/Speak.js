@@ -1,14 +1,14 @@
 import React from "react";
-import { Component } from "react";
 import Button from '.././components/Common/Button';
 import styled from 'styled-components';
 import Speaker from '../components/Speak/Speaker';
 import { useNavigate} from 'react-router-dom';
 import {useParams} from 'react-router-dom';
-import Questions from '../utils/Questions';
+import Questions from '.././utils/Questions';
 import  ColorCode  from ".././utils/Palette";
 import {useState} from 'react';
 import Navbar from "../components/Common/Navbar";
+import { redirect } from "react-router-dom";
 
 
 
@@ -56,14 +56,16 @@ const SpeakerWrapper = styled.div`
 
 
 const  Speak =() =>{
-
-   const navigate = useNavigate();
+    
+   //const history = useHistory();
+   //const navigate = useNavigate();
    const {topic} =useParams();
    const questionArr= Questions[topic];
-   
+   const [isFeedbbackPage, setIsFeedbackPage] = useState(false);
    const [showSpeaker, setShowSpeaker] = useState(false);
    const [buttonColor , setButtonColor] = useState(ColorCode.SelectBlue);
    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+   const currentQuestion = questionArr[currentQuestionIndex];
 
    const handleClick = ()=>{
     setShowSpeaker(true);
@@ -76,27 +78,36 @@ const  Speak =() =>{
    const handleDoneClick=()=>{
     setShowSpeaker(false);
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+    setShowSpeaker(true);
+
+    if(currentQuestionIndex === questionArr.length-2){
+         setIsFeedbackPage(true);
+    } else if (currentQuestionIndex === questionArr.length-1){
+        history.pushState('/feedback');
+    }
    }
     
     return (
 
         <SpeakContainer>
+            <Navbar />
             
             <QuestionContainer>
                <b style={{color : ColorCode.SelectBlue }}>Q{currentQuestionIndex + 1}.</b> {questionArr[currentQuestionIndex]}
             </QuestionContainer>
             {showSpeaker && (
                 <SpeakerWrapper>
-                    <Speaker />
+                    {showSpeaker &&<Speaker />}
+                    {isFeedbbackPage && <redirect to = "/feedback"/>}
                 </SpeakerWrapper>
             )}
             
             <ButtonContainer>
-                <Button  text={"Start"} style = {{color : "white", background:buttonColor, }} onClick={()=>{
+                <Button  text={"Start"} style = {{color : "white", background:buttonColor,  cursor: "pointer"}} onClick={()=>{
                     handleClick();
                     handleButtonClick();
                 }}/>
-                <Button text={"Done"} style={{color : "white", background : buttonColor}} onClick={()=>{
+                <Button text={"Done"} style={{color : "white", background : buttonColor,  cursor: "pointer"}} onClick={()=>{
                     handleDoneClick();handleButtonClick();
                 }}/>
             </ButtonContainer>  

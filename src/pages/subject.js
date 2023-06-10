@@ -1,7 +1,5 @@
 import React from "react";
-import { Component } from "react";
 import styled from "styled-components";
-import Button from "../components/Common/Button";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import ColorCode from "../utils/Palette";
@@ -35,6 +33,19 @@ const Document= styled.div`
     padding-bottom: 3vh;
 
 
+`;
+
+const Button = styled.button`
+  text-align: center;
+  width: 150px;
+  height: 40px;
+  background-color: ${(props) => (props.isActive ? "#00558D" : "#FFFFFF")};
+  color: ${(props) => (props.isActive ? "#FFFFFF" : "#000000")};
+  font-size: 16px;
+  border-radius: 16px;
+  border: none;
+  margin-right: 10px;
+  cursor: pointer; 
 `;
 
 const Cautionbox= styled.div`
@@ -71,7 +82,7 @@ const DocumentBox = styled.div`
 
 const StartButton = styled.button`
      text-align: center;
-     width: 237px;
+     width: 230px;
      height: 73px;
      background-color: #00558D;
      color :white;
@@ -92,7 +103,7 @@ const CautionIcon = styled(Caution)`
 const Subject=() =>{
 
      const navigate = useNavigate();
-     const [selectTopic, setSelectTopic ] = useState(null);
+     const [selectTopic, setSelectTopic ] = React.useState(null);
 
      const handleSubButtonClick = (index) => {
           setSelectTopic(index);
@@ -108,7 +119,7 @@ const Subject=() =>{
                } else if(selectTopic ===3){
                     topic = "family";
                }
-               navigate('/speak/${topic}')
+               navigate(`/speak/${topic}`);
           } else {
                console.error('토픽을 설정해주세요.')
           }
@@ -135,9 +146,9 @@ const Subject=() =>{
            </Document>
            <SubjectTitle>주제를 선택해주세요.</SubjectTitle>
            <SubjectButtons>
-             <Button type="2" text="음식" onClick={()=>handleSubButtonClick(1)}/>
-             <Button type="2" text="여행" onClick={()=>handleSubButtonClick(2)}/>
-             <Button type="2" text="가족" onClick={()=>handleSubButtonClick(3)}/>
+             <Button  onClick={()=>handleSubButtonClick(1)}>음식</Button>
+             <Button  onClick={()=>handleSubButtonClick(2)}>여행</Button>
+             <Button  onClick={()=>handleSubButtonClick(3)}>가족</Button>
            </SubjectButtons>
            <StartButton onClick={handleStartButtonClick}>시작하기</StartButton>
        </Subjectcontainer>

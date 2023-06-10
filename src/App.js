@@ -17,7 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/subject" element={<Subject />} />
-            <Route path="/speak" element={<Speak />} />
+            <Route path="/speak/:topic" element={<Speak />} />
             <Route path="/feedback" element={<Feedback />} />
             <Route path = "/loading2" elemnt = {<Loading2/>}/>
             <Route path = "/loading1" elemnt = {<Loading1/>}/>

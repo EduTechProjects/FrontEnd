@@ -1,6 +1,5 @@
 import React from "react";
-import { Component } from "react";
-import { ReactComponent as Loading2image } from "../assets/Loading2.svg";
+import { ReactComponent as Loadingimage } from "../assets/Loading2.svg";
 import Navbar from "../components/Common/Navbar";
 import styled from "styled-components";
 
@@ -13,7 +12,7 @@ const LoadingWrapper = styled.div`
 
 `;
 
-const StyledLoadingIcon = styled(Loading2image)`
+const StyledLoadingIcon = styled(Loadingimage)`
      width : 240px;
      height : 240px;
 `;

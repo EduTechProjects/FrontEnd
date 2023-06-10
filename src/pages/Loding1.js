@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ReactComponent as Loading1image } from "../assets/Loading1.svg";
+import { ReactComponent as Loadingimage } from "../assets/Loading1.svg";
 import Navbar from '../components/Common/Navbar';
 
 
@@ -13,7 +13,7 @@ const LoadingWrapper = styled.div`
 
 `;
 
-const StyledLoadingIcon = styled(Loading1image)`
+const StyledLoadingIcon = styled(Loadingimage)`
      width : 240px;
      height : 240px;
 `;

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Component } from 'react';
 import {useState} from 'react';
 import AnswerContainer from './AnswerContainer';
 import FeedbackContainer from './FeedbackContainer';
@@ -28,10 +27,12 @@ const Container = styled.div`
 const ToggleIconstyled = styled(ToggleIcon)`
     width : 14px;
     height : 16px;
+    transition : transfrom 0.3s ease;
+    transform : ${({rotate}) => 'rotate(${rotate}deg'};
 
 `;
 
-const ToggleBox = () =>{
+const ToggleBox = (props) =>{
 
     const [isToggleon, setIsToggleOn] = useState('true');
     const [rotate, setRotate] = useState(0);
@@ -39,14 +40,15 @@ const ToggleBox = () =>{
 
     const ToggleHandler=(event)=>{
         setIsToggleOn((preveToggle) =>!preveToggle);
+        setRotate((prevRotate)=>prevRotate +90);
 
     }
 
 
     return (
         <Container>
-            <div style={{color : ColorCode.SelectBlue, fontSize:"20px", fontWeight:"bold", alignSelf: "flex-start"}}>A1.</div>
-            <div style={{color : ColorCode.SelectBlue, fontSize:"20px", fontWeight:"bold", textAlign: "right"}}><ToggleIconstyled onClick={ToggleHandler}/>조회하기</div>
+            <div style={{color : ColorCode.SelectBlue, fontSize:"20px", fontWeight:"bold", alignSelf: "flex-start"}}>{props.index}</div>
+            <div style={{color : ColorCode.SelectBlue, fontSize:"20px", fontWeight:"bold", textAlign: "right"}}><ToggleIconstyled rotate = {rotate} onClick={ToggleHandler}/>조회하기</div>
             
             
              {isToggleon && (

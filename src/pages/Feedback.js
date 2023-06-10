@@ -1,5 +1,4 @@
 import React from "react";
-import { Component } from "react";
 import ToggleBox from ".././components/Feedback/Togglebox";  
 import styled from "styled-components";
 
@@ -60,7 +59,7 @@ const Feedback=() =>{
             
             <Title>스피킹 결과</Title>
             <ToggleContainer>
-                <ToggleBox  />
+                <ToggleBox />
                 <ToggleBox />
                 <ToggleBox />
             </ToggleContainer>

@@ -86,6 +86,7 @@ const Subject = () => {
       } else if (selectTopic === 3) {
         topic = "family";
       }
+      // 선택한
       navigate(`/speak/${topic}`);
     } else {
       alert("토픽을 설정해주세요.");

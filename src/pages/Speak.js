@@ -7,6 +7,7 @@ import Questions from ".././utils/Questions";
 import ColorCode from ".././utils/Palette";
 import { useState, useRef } from "react";
 import axios from "axios";
+import Loading from "./Loading";
 
 const SpeakContainer = styled.div`
   background-color: #f5f5f5;
@@ -23,13 +24,14 @@ const QuestionContainer = styled.div`
   background-color: #f5f5f5;
   font-weight: bold;
   font-size: 30px;
-  width: 50%;
+  width: 60%;
   height: 40px;
   text-align: center;
   padding-top: 20vh;
   margin: 0 auto;
   padding-bottom: 20vh;
 `;
+
 const ButtonContainer = styled.div`
   padding-top: 5vh;
   margin: 0 auto;
@@ -114,6 +116,11 @@ const Speak = () => {
     setShowSpeaker(false);
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
 
+    // 결과 생성중일 때 로딩 화면
+    // if (결과 생성중) {
+    //   navigate("/loading");
+    // }
+
     if (currentQuestionIndex === questionArr.length - 1) {
       setIsFeedbackPage(true);
     }
@@ -126,7 +133,7 @@ const Speak = () => {
   return (
     <SpeakContainer>
       <QuestionContainer>
-        <b style={{ color: ColorCode.SelectBlue }}>
+        <b style={{ color: ColorCode.SelectBlue, marginRight: "10px" }}>
           Q{currentQuestionIndex + 1}.
         </b>
         {currentQuestion}

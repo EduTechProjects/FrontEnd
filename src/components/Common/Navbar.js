@@ -24,6 +24,7 @@ const Container = styled.div`
   padding-bottom: 0.7rem;
   padding-left: 3rem;
   padding-right: 3rem;
+  background-color: #f5f5f5;
 `;
 
 const LogoIcon = styled(Logo)`

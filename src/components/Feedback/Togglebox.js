@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AnswerContainer from "./AnswerContainer";
 import FeedbackContainer from "./FeedbackContainer";
 import { ColorCode } from "./../../utils/Palette";
@@ -32,6 +32,10 @@ const ToggleIconstyled = styled(ToggleIcon)`
 const A = styled.h2`
   margin: 0;
   cursor: pointer;
+  color: ${(props) => props.color};
+  font-size: 20px;
+  font-weight: bold;
+  align-self: flex-start;
 `;
 
 const AContainer = styled.div`
@@ -39,7 +43,7 @@ const AContainer = styled.div`
   justify-content: space-between;
 `;
 
-const ToggleBox = (props) => {
+const ToggleBox = ({ index, answer, feedback }) => {
   const [isToggleon, setIsToggleOn] = useState("true");
   const [rotate, setRotate] = useState(0);
 
@@ -51,35 +55,17 @@ const ToggleBox = (props) => {
   return (
     <Container>
       <AContainer>
-        <A
-          style={{
-            color: ColorCode.SelectBlue,
-            fontSize: "20px",
-            fontWeight: "bold",
-            alignSelf: "flex-start",
-          }}
-        >
-          A{props.index}
-        </A>
-        <A
-          style={{
-            color: ColorCode.SelectBlue,
-            fontSize: "20px",
-            fontWeight: "bold",
-            textAlign: "right",
-          }}
-          onClick={ToggleHandler}
-        >
+        <A color={ColorCode.SelectBlue}>A{index}</A>
+        <A color={ColorCode.SelectBlue} onClick={ToggleHandler}>
           조회하기
           <ToggleIconstyled rotate={rotate} />
         </A>
       </AContainer>
-
       {!isToggleon && (
         <React.Fragment>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <AnswerContainer />
-            <FeedbackContainer />
+            <AnswerContainer answer={answer} />
+            <FeedbackContainer feedback={feedback} />
           </div>
         </React.Fragment>
       )}

@@ -7,7 +7,6 @@ import Questions from ".././utils/Questions";
 import ColorCode from ".././utils/Palette";
 import { useState, useRef } from "react";
 import axios from "axios";
-import Loading from "./Loading";
 
 const SpeakContainer = styled.div`
   background-color: #f5f5f5;
@@ -115,11 +114,6 @@ const Speak = () => {
 
     setShowSpeaker(false);
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
-
-    // 결과 생성중일 때 로딩 화면
-    // if (결과 생성중) {
-    //   navigate("/loading");
-    // }
 
     if (currentQuestionIndex === questionArr.length - 1) {
       setIsFeedbackPage(true);

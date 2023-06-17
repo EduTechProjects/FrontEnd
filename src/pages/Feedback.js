@@ -1,6 +1,52 @@
 import React from "react";
 import ToggleBox from ".././components/Feedback/Togglebox";
 import styled from "styled-components";
+import Loading from "./Loading";
+import { useState, useEffect } from "react";
+import axios from "axios";
+
+const Feedback = () => {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  // 결과 GET
+  const GetResultAPI = async () => {
+    setLoading(true);
+
+    const response = await axios.get(""); // url 넣기
+    console.log(response.data, response.status);
+    setData(response.data);
+
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    GetResultAPI();
+  }, []);
+
+  return (
+    <FeedbackContainer>
+      {loading ? (
+        <Loading />
+      ) : (
+        <>
+          <Title>스피킹 결과</Title>
+          <ToggleContainer>
+            {data.map((el, i) => (
+              <ToggleBox
+                index={`${i + 1}`}
+                answer={el.answer}
+                feedback={el.feedback}
+              />
+            ))}
+          </ToggleContainer>
+        </>
+      )}
+    </FeedbackContainer>
+  );
+};
+
+export default Feedback;
 
 const FeedbackContainer = styled.div`
   padding-top: 10vh;
@@ -31,22 +77,6 @@ const ToggleContainer = styled.div`
   gap: 40px;
   margin-top: 20px;
   justify-content: center;
-
   align-content: space-between;
   margin-bottom: 20vh;
 `;
-
-const Feedback = () => {
-  return (
-    <FeedbackContainer>
-      <Title>스피킹 결과</Title>
-      <ToggleContainer>
-        <ToggleBox index={"1"} />
-        <ToggleBox index={"2"} />
-        <ToggleBox index={"3"} />
-      </ToggleContainer>
-    </FeedbackContainer>
-  );
-};
-
-export default Feedback;

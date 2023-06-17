@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import ColorCode from ".././utils/Palette";
+import ColorCode from "../utils/Palette";
 import Button from "../components/Common/Button";
 import { ReactComponent as Example } from "../assets/example.svg";
 import { ReactComponent as Example2 } from "../assets/example2.svg";
